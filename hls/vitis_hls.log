@@ -1,0 +1,1115 @@
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'pmsf' on host 'saber' (Linux_x86_64 version 5.19.0-45-generic) on Mon Jun 26 20:17:47 WEST 2023
+INFO: [HLS 200-10] On os Ubuntu 22.04.2 LTS
+INFO: [HLS 200-10] In directory '/home/pmsf/HwSw/Tese/hls'
+Sourcing Tcl script '/home/pmsf/HwSw/Tese/hls/mixed_conv/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source /home/pmsf/HwSw/Tese/hls/mixed_conv/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project mixed_conv 
+INFO: [HLS 200-10] Opening project '/home/pmsf/HwSw/Tese/hls/mixed_conv'.
+INFO: [HLS 200-1510] Running: set_top conv 
+INFO: [HLS 200-1510] Running: add_files ../Sources/conv/mixed_conv.h 
+INFO: [HLS 200-10] Adding design file '../Sources/conv/mixed_conv.h' to the project
+INFO: [HLS 200-1510] Running: add_files ../Sources/conv/mixed_conv.cpp 
+INFO: [HLS 200-10] Adding design file '../Sources/conv/mixed_conv.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../Sources/conv/tb_mixed_conv.cpp -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file '../Sources/conv/tb_mixed_conv.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/pmsf/HwSw/Tese/hls/mixed_conv/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-i'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-i 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+Running Dispatch Server on port: 45799
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../Sources/conv/tb_mixed_conv.cpp in debug mode
+   Compiling ../../../../../Sources/conv/mixed_conv.cpp in debug mode
+   Generating csim.exe
+Beginning testbench
+Input Map
+channel = 2:
+(0,0): value = 2  (0,1): value = 2  
+(1,0): value = 2  (1,1): value = 2  
+
+
+
+channel = 1:
+(0,0): value = 2  (0,1): value = 2  
+(1,0): value = 2  (1,1): value = 2  
+
+
+
+Filter 0
+channel = 2:
+(0,0): value = 1  (0,1): value = 1  
+(1,0): value = 1  (1,1): value = 1  
+
+
+
+channel = 1:
+(0,0): value = 1  (0,1): value = 1  
+(1,0): value = 1  (1,1): value = 1  
+
+
+
+Sent Bias N = 1 
+tmp data 0
+
+0 1224979098644774912
+tmp data 0
+
+1 1224979098644774912
+tmp data 0
+
+2 1224979098644774912
+tmp data 0
+
+3 1224979098644774912
+Sent whole Filter N = 4 
+Sent whole Input Map N = 4  
+
+Reading BIAS from stream...
+
+saving in pos 0 bias 0, from bus range 63 - 56
+saving in pos 1 bias 0, from bus range 55 - 48
+saving in pos 2 bias 0, from bus range 47 - 40
+saving in pos 3 bias 0, from bus range 39 - 32
+saving in pos 4 bias 0, from bus range 31 - 24
+saving in pos 5 bias 0, from bus range 23 - 16
+saving in pos 6 bias 0, from bus range 15 - 8
+saving in pos 7 bias 0, from bus range 7 - 0
+
+
+Reading WEIGHTS from stream...
+
+PE 0
+saving in pos 0 weight 1, from bus range 63 - 60
+saving in pos 1 weight 1, from bus range 59 - 56
+saving in pos 2 weight 0, from bus range 55 - 52
+saving in pos 3 weight 0, from bus range 51 - 48
+saving in pos 4 weight 0, from bus range 47 - 44
+saving in pos 5 weight 0, from bus range 43 - 40
+saving in pos 6 weight 0, from bus range 39 - 36
+saving in pos 7 weight 0, from bus range 35 - 32
+saving in pos 8 weight 0, from bus range 31 - 28
+saving in pos 9 weight 0, from bus range 27 - 24
+saving in pos 10 weight 0, from bus range 23 - 20
+saving in pos 11 weight 0, from bus range 19 - 16
+saving in pos 12 weight 0, from bus range 15 - 12
+saving in pos 13 weight 0, from bus range 11 - 8
+saving in pos 14 weight 0, from bus range 7 - 4
+saving in pos 15 weight 0, from bus range 3 - 0
+
+PE 0
+saving in pos 16 weight 1, from bus range 63 - 60
+saving in pos 17 weight 1, from bus range 59 - 56
+saving in pos 18 weight 0, from bus range 55 - 52
+saving in pos 19 weight 0, from bus range 51 - 48
+saving in pos 20 weight 0, from bus range 47 - 44
+saving in pos 21 weight 0, from bus range 43 - 40
+saving in pos 22 weight 0, from bus range 39 - 36
+saving in pos 23 weight 0, from bus range 35 - 32
+saving in pos 24 weight 0, from bus range 31 - 28
+saving in pos 25 weight 0, from bus range 27 - 24
+saving in pos 26 weight 0, from bus range 23 - 20
+saving in pos 27 weight 0, from bus range 19 - 16
+saving in pos 28 weight 0, from bus range 15 - 12
+saving in pos 29 weight 0, from bus range 11 - 8
+saving in pos 30 weight 0, from bus range 7 - 4
+saving in pos 31 weight 0, from bus range 3 - 0
+
+PE 0
+saving in pos 32 weight 1, from bus range 63 - 60
+saving in pos 33 weight 1, from bus range 59 - 56
+saving in pos 34 weight 0, from bus range 55 - 52
+saving in pos 35 weight 0, from bus range 51 - 48
+saving in pos 36 weight 0, from bus range 47 - 44
+saving in pos 37 weight 0, from bus range 43 - 40
+saving in pos 38 weight 0, from bus range 39 - 36
+saving in pos 39 weight 0, from bus range 35 - 32
+saving in pos 40 weight 0, from bus range 31 - 28
+saving in pos 41 weight 0, from bus range 27 - 24
+saving in pos 42 weight 0, from bus range 23 - 20
+saving in pos 43 weight 0, from bus range 19 - 16
+saving in pos 44 weight 0, from bus range 15 - 12
+saving in pos 45 weight 0, from bus range 11 - 8
+saving in pos 46 weight 0, from bus range 7 - 4
+saving in pos 47 weight 0, from bus range 3 - 0
+
+PE 0
+saving in pos 48 weight 1, from bus range 63 - 60
+saving in pos 49 weight 1, from bus range 59 - 56
+saving in pos 50 weight 0, from bus range 55 - 52
+saving in pos 51 weight 0, from bus range 51 - 48
+saving in pos 52 weight 0, from bus range 47 - 44
+saving in pos 53 weight 0, from bus range 43 - 40
+saving in pos 54 weight 0, from bus range 39 - 36
+saving in pos 55 weight 0, from bus range 35 - 32
+saving in pos 56 weight 0, from bus range 31 - 28
+saving in pos 57 weight 0, from bus range 27 - 24
+saving in pos 58 weight 0, from bus range 23 - 20
+saving in pos 59 weight 0, from bus range 19 - 16
+saving in pos 60 weight 0, from bus range 15 - 12
+saving in pos 61 weight 0, from bus range 11 - 8
+saving in pos 62 weight 0, from bus range 7 - 4
+saving in pos 63 weight 0, from bus range 3 - 0
+
+
+Reading ACTIVATIONS from stream...
+
+saving in pos 0 act 0, from PADDING
+saving in pos 1 act 0, from PADDING
+saving in pos 2 act 0, from PADDING
+saving in pos 3 act 0, from PADDING
+saving in pos 4 act 0, from PADDING
+saving in pos 5 act 0, from PADDING
+saving in pos 6 act 0, from PADDING
+saving in pos 7 act 0, from PADDING
+saving in pos 8 act 0, from PADDING
+saving in pos 9 act 0, from PADDING
+saving in pos 10 act 0, from PADDING
+saving in pos 11 act 0, from PADDING
+saving in pos 12 act 0, from PADDING
+saving in pos 13 act 0, from PADDING
+saving in pos 14 act 0, from PADDING
+saving in pos 15 act 0, from PADDING
+
+saving in pos 16 act 0, from PADDING
+saving in pos 17 act 0, from PADDING
+saving in pos 18 act 0, from PADDING
+saving in pos 19 act 0, from PADDING
+saving in pos 20 act 0, from PADDING
+saving in pos 21 act 0, from PADDING
+saving in pos 22 act 0, from PADDING
+saving in pos 23 act 0, from PADDING
+saving in pos 24 act 0, from PADDING
+saving in pos 25 act 0, from PADDING
+saving in pos 26 act 0, from PADDING
+saving in pos 27 act 0, from PADDING
+saving in pos 28 act 0, from PADDING
+saving in pos 29 act 0, from PADDING
+saving in pos 30 act 0, from PADDING
+saving in pos 31 act 0, from PADDING
+
+saving in pos 32 act 0, from PADDING
+saving in pos 33 act 0, from PADDING
+saving in pos 34 act 0, from PADDING
+saving in pos 35 act 0, from PADDING
+saving in pos 36 act 0, from PADDING
+saving in pos 37 act 0, from PADDING
+saving in pos 38 act 0, from PADDING
+saving in pos 39 act 0, from PADDING
+saving in pos 40 act 0, from PADDING
+saving in pos 41 act 0, from PADDING
+saving in pos 42 act 0, from PADDING
+saving in pos 43 act 0, from PADDING
+saving in pos 44 act 0, from PADDING
+saving in pos 45 act 0, from PADDING
+saving in pos 46 act 0, from PADDING
+saving in pos 47 act 0, from PADDING
+
+saving in pos 48 act 0, from PADDING
+saving in pos 49 act 0, from PADDING
+saving in pos 50 act 0, from PADDING
+saving in pos 51 act 0, from PADDING
+saving in pos 52 act 0, from PADDING
+saving in pos 53 act 0, from PADDING
+saving in pos 54 act 0, from PADDING
+saving in pos 55 act 0, from PADDING
+saving in pos 56 act 0, from PADDING
+saving in pos 57 act 0, from PADDING
+saving in pos 58 act 0, from PADDING
+saving in pos 59 act 0, from PADDING
+saving in pos 60 act 0, from PADDING
+saving in pos 61 act 0, from PADDING
+saving in pos 62 act 0, from PADDING
+saving in pos 63 act 0, from PADDING
+
+saving in pos 64 act 0, from PADDING
+saving in pos 65 act 0, from PADDING
+saving in pos 66 act 0, from PADDING
+saving in pos 67 act 0, from PADDING
+saving in pos 68 act 0, from PADDING
+saving in pos 69 act 0, from PADDING
+saving in pos 70 act 0, from PADDING
+saving in pos 71 act 0, from PADDING
+saving in pos 72 act 0, from PADDING
+saving in pos 73 act 0, from PADDING
+saving in pos 74 act 0, from PADDING
+saving in pos 75 act 0, from PADDING
+saving in pos 76 act 0, from PADDING
+saving in pos 77 act 0, from PADDING
+saving in pos 78 act 0, from PADDING
+saving in pos 79 act 0, from PADDING
+
+saving in pos 80 act 2, from bus range 63 - 60
+saving in pos 81 act 2, from bus range 59 - 56
+saving in pos 82 act 0, from bus range 55 - 52
+saving in pos 83 act 0, from bus range 51 - 48
+saving in pos 84 act 0, from bus range 47 - 44
+saving in pos 85 act 0, from bus range 43 - 40
+saving in pos 86 act 0, from bus range 39 - 36
+saving in pos 87 act 0, from bus range 35 - 32
+saving in pos 88 act 0, from bus range 31 - 28
+saving in pos 89 act 0, from bus range 27 - 24
+saving in pos 90 act 0, from bus range 23 - 20
+saving in pos 91 act 0, from bus range 19 - 16
+saving in pos 92 act 0, from bus range 15 - 12
+saving in pos 93 act 0, from bus range 11 - 8
+saving in pos 94 act 0, from bus range 7 - 4
+saving in pos 95 act 0, from bus range 3 - 0
+
+saving in pos 96 act 2, from bus range 63 - 60
+saving in pos 97 act 2, from bus range 59 - 56
+saving in pos 98 act 0, from bus range 55 - 52
+saving in pos 99 act 0, from bus range 51 - 48
+saving in pos 100 act 0, from bus range 47 - 44
+saving in pos 101 act 0, from bus range 43 - 40
+saving in pos 102 act 0, from bus range 39 - 36
+saving in pos 103 act 0, from bus range 35 - 32
+saving in pos 104 act 0, from bus range 31 - 28
+saving in pos 105 act 0, from bus range 27 - 24
+saving in pos 106 act 0, from bus range 23 - 20
+saving in pos 107 act 0, from bus range 19 - 16
+saving in pos 108 act 0, from bus range 15 - 12
+saving in pos 109 act 0, from bus range 11 - 8
+saving in pos 110 act 0, from bus range 7 - 4
+saving in pos 111 act 0, from bus range 3 - 0
+
+saving in pos 112 act 0, from PADDING
+saving in pos 113 act 0, from PADDING
+saving in pos 114 act 0, from PADDING
+saving in pos 115 act 0, from PADDING
+saving in pos 116 act 0, from PADDING
+saving in pos 117 act 0, from PADDING
+saving in pos 118 act 0, from PADDING
+saving in pos 119 act 0, from PADDING
+saving in pos 120 act 0, from PADDING
+saving in pos 121 act 0, from PADDING
+saving in pos 122 act 0, from PADDING
+saving in pos 123 act 0, from PADDING
+saving in pos 124 act 0, from PADDING
+saving in pos 125 act 0, from PADDING
+saving in pos 126 act 0, from PADDING
+saving in pos 127 act 0, from PADDING
+
+saving in pos 128 act 0, from PADDING
+saving in pos 129 act 0, from PADDING
+saving in pos 130 act 0, from PADDING
+saving in pos 131 act 0, from PADDING
+saving in pos 132 act 0, from PADDING
+saving in pos 133 act 0, from PADDING
+saving in pos 134 act 0, from PADDING
+saving in pos 135 act 0, from PADDING
+saving in pos 136 act 0, from PADDING
+saving in pos 137 act 0, from PADDING
+saving in pos 138 act 0, from PADDING
+saving in pos 139 act 0, from PADDING
+saving in pos 140 act 0, from PADDING
+saving in pos 141 act 0, from PADDING
+saving in pos 142 act 0, from PADDING
+saving in pos 143 act 0, from PADDING
+
+saving in pos 144 act 2, from bus range 63 - 60
+saving in pos 145 act 2, from bus range 59 - 56
+saving in pos 146 act 0, from bus range 55 - 52
+saving in pos 147 act 0, from bus range 51 - 48
+saving in pos 148 act 0, from bus range 47 - 44
+saving in pos 149 act 0, from bus range 43 - 40
+saving in pos 150 act 0, from bus range 39 - 36
+saving in pos 151 act 0, from bus range 35 - 32
+saving in pos 152 act 0, from bus range 31 - 28
+saving in pos 153 act 0, from bus range 27 - 24
+saving in pos 154 act 0, from bus range 23 - 20
+saving in pos 155 act 0, from bus range 19 - 16
+saving in pos 156 act 0, from bus range 15 - 12
+saving in pos 157 act 0, from bus range 11 - 8
+saving in pos 158 act 0, from bus range 7 - 4
+saving in pos 159 act 0, from bus range 3 - 0
+
+saving in pos 160 act 2, from bus range 63 - 60
+saving in pos 161 act 2, from bus range 59 - 56
+saving in pos 162 act 0, from bus range 55 - 52
+saving in pos 163 act 0, from bus range 51 - 48
+saving in pos 164 act 0, from bus range 47 - 44
+saving in pos 165 act 0, from bus range 43 - 40
+saving in pos 166 act 0, from bus range 39 - 36
+saving in pos 167 act 0, from bus range 35 - 32
+saving in pos 168 act 0, from bus range 31 - 28
+saving in pos 169 act 0, from bus range 27 - 24
+saving in pos 170 act 0, from bus range 23 - 20
+saving in pos 171 act 0, from bus range 19 - 16
+saving in pos 172 act 0, from bus range 15 - 12
+saving in pos 173 act 0, from bus range 11 - 8
+saving in pos 174 act 0, from bus range 7 - 4
+saving in pos 175 act 0, from bus range 3 - 0
+
+saving in pos 176 act 0, from PADDING
+saving in pos 177 act 0, from PADDING
+saving in pos 178 act 0, from PADDING
+saving in pos 179 act 0, from PADDING
+saving in pos 180 act 0, from PADDING
+saving in pos 181 act 0, from PADDING
+saving in pos 182 act 0, from PADDING
+saving in pos 183 act 0, from PADDING
+saving in pos 184 act 0, from PADDING
+saving in pos 185 act 0, from PADDING
+saving in pos 186 act 0, from PADDING
+saving in pos 187 act 0, from PADDING
+saving in pos 188 act 0, from PADDING
+saving in pos 189 act 0, from PADDING
+saving in pos 190 act 0, from PADDING
+saving in pos 191 act 0, from PADDING
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+saving in pos 192 act 0, from PADDING
+saving in pos 193 act 0, from PADDING
+saving in pos 194 act 0, from PADDING
+saving in pos 195 act 0, from PADDING
+saving in pos 196 act 0, from PADDING
+saving in pos 197 act 0, from PADDING
+saving in pos 198 act 0, from PADDING
+saving in pos 199 act 0, from PADDING
+saving in pos 200 act 0, from PADDING
+saving in pos 201 act 0, from PADDING
+saving in pos 202 act 0, from PADDING
+saving in pos 203 act 0, from PADDING
+saving in pos 204 act 0, from PADDING
+saving in pos 205 act 0, from PADDING
+saving in pos 206 act 0, from PADDING
+saving in pos 207 act 0, from PADDING
+
+PADDING at x = 0, y = 0 
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 2 * filter 1 = 4, accum 12
+		Doing mac: featureMap 2 * filter 1 = 4, accum 16
+
+saving in pos 208 act 0, from PADDING
+saving in pos 209 act 0, from PADDING
+saving in pos 210 act 0, from PADDING
+saving in pos 211 act 0, from PADDING
+saving in pos 212 act 0, from PADDING
+saving in pos 213 act 0, from PADDING
+saving in pos 214 act 0, from PADDING
+saving in pos 215 act 0, from PADDING
+saving in pos 216 act 0, from PADDING
+saving in pos 217 act 0, from PADDING
+saving in pos 218 act 0, from PADDING
+saving in pos 219 act 0, from PADDING
+saving in pos 220 act 0, from PADDING
+saving in pos 221 act 0, from PADDING
+saving in pos 222 act 0, from PADDING
+saving in pos 223 act 0, from PADDING
+
+PADDING at x = 1, y = 0 
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+saving in pos 224 act 0, from PADDING
+saving in pos 225 act 0, from PADDING
+saving in pos 226 act 0, from PADDING
+saving in pos 227 act 0, from PADDING
+saving in pos 228 act 0, from PADDING
+saving in pos 229 act 0, from PADDING
+saving in pos 230 act 0, from PADDING
+saving in pos 231 act 0, from PADDING
+saving in pos 232 act 0, from PADDING
+saving in pos 233 act 0, from PADDING
+saving in pos 234 act 0, from PADDING
+saving in pos 235 act 0, from PADDING
+saving in pos 236 act 0, from PADDING
+saving in pos 237 act 0, from PADDING
+saving in pos 238 act 0, from PADDING
+saving in pos 239 act 0, from PADDING
+
+PADDING at x = 2, y = 0 
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 2 * filter 1 = 4, accum 12
+		Doing mac: featureMap 2 * filter 1 = 4, accum 16
+
+saving in pos 64 act 0, from PADDING
+saving in pos 65 act 0, from PADDING
+saving in pos 66 act 0, from PADDING
+saving in pos 67 act 0, from PADDING
+saving in pos 68 act 0, from PADDING
+saving in pos 69 act 0, from PADDING
+saving in pos 70 act 0, from PADDING
+saving in pos 71 act 0, from PADDING
+saving in pos 72 act 0, from PADDING
+saving in pos 73 act 0, from PADDING
+saving in pos 74 act 0, from PADDING
+saving in pos 75 act 0, from PADDING
+saving in pos 76 act 0, from PADDING
+saving in pos 77 act 0, from PADDING
+saving in pos 78 act 0, from PADDING
+saving in pos 79 act 0, from PADDING
+
+PADDING at x = 0, y = 1 
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 2 * filter 1 = 4, accum 12
+		Doing mac: featureMap 2 * filter 1 = 4, accum 16
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 2 * filter 1 = 4, accum 20
+		Doing mac: featureMap 2 * filter 1 = 4, accum 24
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 0 * filter 0 = 0, accum 24
+		Doing mac: featureMap 2 * filter 1 = 4, accum 28
+		Doing mac: featureMap 2 * filter 1 = 4, accum 32
+
+saving in pos 80 act 0, from PADDING
+saving in pos 81 act 0, from PADDING
+saving in pos 82 act 0, from PADDING
+saving in pos 83 act 0, from PADDING
+saving in pos 84 act 0, from PADDING
+saving in pos 85 act 0, from PADDING
+saving in pos 86 act 0, from PADDING
+saving in pos 87 act 0, from PADDING
+saving in pos 88 act 0, from PADDING
+saving in pos 89 act 0, from PADDING
+saving in pos 90 act 0, from PADDING
+saving in pos 91 act 0, from PADDING
+saving in pos 92 act 0, from PADDING
+saving in pos 93 act 0, from PADDING
+saving in pos 94 act 0, from PADDING
+saving in pos 95 act 0, from PADDING
+
+PADDING at x = 1, y = 1 
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 2 * filter 1 = 4, accum 12
+		Doing mac: featureMap 2 * filter 1 = 4, accum 16
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 1 = 0, accum 16
+		Doing mac: featureMap 0 * filter 1 = 0, accum 16
+
+saving in pos 96 act 0, from PADDING
+saving in pos 97 act 0, from PADDING
+saving in pos 98 act 0, from PADDING
+saving in pos 99 act 0, from PADDING
+saving in pos 100 act 0, from PADDING
+saving in pos 101 act 0, from PADDING
+saving in pos 102 act 0, from PADDING
+saving in pos 103 act 0, from PADDING
+saving in pos 104 act 0, from PADDING
+saving in pos 105 act 0, from PADDING
+saving in pos 106 act 0, from PADDING
+saving in pos 107 act 0, from PADDING
+saving in pos 108 act 0, from PADDING
+saving in pos 109 act 0, from PADDING
+saving in pos 110 act 0, from PADDING
+saving in pos 111 act 0, from PADDING
+
+PADDING at x = 2, y = 1 
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+		Doing mac: featureMap 0 * filter 1 = 0, accum 0
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 2 * filter 1 = 4, accum 12
+		Doing mac: featureMap 2 * filter 1 = 4, accum 16
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 1 = 0, accum 16
+		Doing mac: featureMap 0 * filter 1 = 0, accum 16
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 0 = 0, accum 16
+		Doing mac: featureMap 0 * filter 1 = 0, accum 16
+		Doing mac: featureMap 0 * filter 1 = 0, accum 16
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 0 * filter 0 = 0, accum 0
+		Doing mac: featureMap 2 * filter 1 = 4, accum 4
+		Doing mac: featureMap 2 * filter 1 = 4, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 0 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+		Doing mac: featureMap 0 * filter 1 = 0, accum 8
+
+Receiving out Map N = 9  
+9223372036854775808
+17293822569102704640
+9223372036854775808
+17293822569102704640
+17293822569102704640
+17293822569102704640
+9223372036854775808
+17293822569102704640
+9223372036854775808
+Output is: 
+channel = 1:
+(0,0): value = 8  (0,1): value = 15  (0,2): value = 8  
+(1,0): value = 15  (1,1): value = 15  (1,2): value = 15  
+(2,0): value = 8  (2,1): value = 15  (2,2): value = 8  
+
+
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 9
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 3.68 seconds. CPU system time: 0.49 seconds. Elapsed time: 4.18 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 5.66 seconds. Total CPU system time: 0.82 seconds. Total elapsed time: 16.4 seconds; peak allocated memory: 750.535 MB.

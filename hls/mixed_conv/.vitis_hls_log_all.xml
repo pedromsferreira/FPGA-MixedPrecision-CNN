@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-25T16:46:34.012+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T17:29:12.676+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T17:28:42.469+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T17:17:54.885+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T17:16:29.633+0100"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T17:13:54.983+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-21T17:53:16.569+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-21T17:52:34.786+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-21T17:50:39.330+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-08T17:28:12.335+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-08T17:26:47.319+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-08T17:21:50.011+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="mixed_conv" solutionName="solution1" date="2023-06-08T17:10:30.718+0100"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <csimLog>
+        <logs message="WARNING [HLS SIM]: hls::stream 'outputStream' contains leftover data, which may result in RTL simulation hanging." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T15:56:26.918+0100" type="Warning"/>
+        <logs message="WARNING [HLS SIM]: hls::stream 'outputStream' contains leftover data, which may result in RTL simulation hanging." projectName="mixed_conv" solutionName="solution1" date="2023-06-22T15:54:02.399+0100" type="Warning"/>
+      </csimLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
