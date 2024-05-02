@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="mixed_conv_w2a8" solutionName="solution1" date="2024-04-18T02:53:22.755+0100" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] /home/mpv/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:628: variable-indexed range selection may cause suboptimal QoR." projectName="mixed_conv_w2a8" solutionName="solution1" date="2024-04-18T02:52:46.221+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

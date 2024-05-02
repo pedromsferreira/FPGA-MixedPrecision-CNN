@@ -1,0 +1,582 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 204, 
+                   Column: 2 }
+Function:        _Z12read_weightsPA576_6ap_intILi64EEjjjRN3hls6streamINS3_4axisIS_ILi128EELm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_stream_weights(ap_int<64>*, unsigned int*, int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 155, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'read_weights(ap_int<64> (*) [576], unsigned int, unsigned int, unsigned int, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 184, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 99, 
+                   Column: 4 }
+Function:        _Z16read_feature_mapP6ap_intILi128EEjjjjPijPjS3_S3_RN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'save_padding_pixel(ap_int<128>*, unsigned int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 59, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'read_feature_map(ap_int<128>*, unsigned int, unsigned int, unsigned int, unsigned int, int*, unsigned int, unsigned int*, unsigned int*, unsigned int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 86, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 101, 
+                   Column: 4 }
+Function:        _Z16read_feature_mapP6ap_intILi128EEjjjjPijPjS3_S3_RN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_stream_activations(ap_int<128>*, unsigned int, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 68, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'read_feature_map(ap_int<128>*, unsigned int, unsigned int, unsigned int, unsigned int, int*, unsigned int, unsigned int*, unsigned int*, unsigned int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 86, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 136, 
+                   Column: 3 }
+Function:        _Z21read_feature_map_onceP6ap_intILi128EEjjjjPiPjS3_S3_RN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'save_padding_pixel(ap_int<128>*, unsigned int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 59, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'read_feature_map_once(ap_int<128>*, unsigned int, unsigned int, unsigned int, unsigned int, int*, unsigned int*, unsigned int*, unsigned int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 127, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 138, 
+                   Column: 3 }
+Function:        _Z21read_feature_map_onceP6ap_intILi128EEjjjjPiPjS3_S3_RN3hls6streamINS4_4axisIS0_Lm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_stream_activations(ap_int<128>*, unsigned int, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 68, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'read_feature_map_once(ap_int<128>*, unsigned int, unsigned int, unsigned int, unsigned int, int*, unsigned int*, unsigned int*, unsigned int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 127, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 488, 
+                   Column: 10 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'PE(ap_int<128>, ap_int<64>, ap_int<32>*, bool)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 14, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'conv(hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, int, int, int, int, int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 444, 
+                   Column: 9 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_feature_map_once(ap_int<128>*, unsigned int, unsigned int, unsigned int, unsigned int, int*, unsigned int*, unsigned int*, unsigned int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 127, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'conv(hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, int, int, int, int, int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 164, 
+                   Column: 2 }
+Function:        _Z12read_weightsPA576_6ap_intILi64EEjjjRN3hls6streamINS3_4axisIS_ILi128EELm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        WeightBusSeparationLOOP
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        AccumResetLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:456:9'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PECallLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:470:8'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PEOperationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:18:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 184, 
+                   Column: 0 }
+Function:        _Z12read_weightsPA576_6ap_intILi64EEjjjRN3hls6streamINS3_4axisIS_ILi128EELm0ELm0ELm0EEELi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        WeightBusSeparationLOOP
+  - String:          ''' ('
+  - LoopLoc:         'sources/mixed_conv_w4/mixed_conv.cpp:164:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          read_weights
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_bias(ap_int<8>*, unsigned int, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 231, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'conv(hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, int, int, int, int, int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_weights(ap_int<64> (*) [576], unsigned int, unsigned int, unsigned int, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 184, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'conv(hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, int, int, int, int, int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                   Column: 0 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'read_feature_map(ap_int<128>*, unsigned int, unsigned int, unsigned int, unsigned int, int*, unsigned int, unsigned int*, unsigned int*, unsigned int*, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 86, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'conv(hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_int<128>, 0ul, 0ul, 0ul>, 0>&, int, int, int, int, int)'
+    DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 262, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 284, 
+                   Column: 15 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          filter
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 286, 
+                   Column: 6 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          inputMapLineAddr
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 287, 
+                   Column: 9 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          bias
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '16'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: sources/mixed_conv_w4/mixed_conv.cpp, Line: 288, 
+                   Column: 10 }
+Function:        _Z4convRN3hls6streamINS_4axisI6ap_intILi128EELm0ELm0ELm0EEELi0EEES6_iiiii
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          accum
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mixed_conv.h" path="/home/pferreira/HwSw/HLS/sources/mixed_conv_w2/mixed_conv.h"/>
+    <originFiles name="mixed_conv.cpp" path="/home/pferreira/HwSw/HLS/sources/mixed_conv_w2/mixed_conv.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_mixed_conv.cpp" path="/home/pferreira/HwSw/HLS/sources/mixed_conv_w2/tb_mixed_conv.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
