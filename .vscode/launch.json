@@ -1,0 +1,105 @@
+// {
+//     // Use IntelliSense to learn about possible attributes.
+//     // Hover to view descriptions of existing attributes.
+//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+//     "version": "0.2.0",
+//     "configurations": [
+
+
+//         {
+//             "name": "Python: Current File",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "${file}",
+//             "console": "integratedTerminal",
+//             "args": ["--model=ResNet18"],
+//             "justMyCode": true
+//         }
+//     ]
+// }
+
+//main.py
+// {
+    // // Use IntelliSense to learn about possible attributes.
+    // // Hover to view descriptions of existing attributes.
+    // // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // "version": "0.2.0",
+    // "configurations": [
+
+
+    //     {
+    //         "name": "Python: Current File",
+    //         "type": "python",
+    //         "request": "launch",
+    //         "program": "${file}",
+    //         "console": "integratedTerminal",
+    //         "args": ["--model=ResNetQuantMerged18",
+    //                  "--modelFile=resnetQuantMerged",
+    //                  "--optimizer=SGD",
+    //                  "-r",
+    //                  "--unstrict",
+    //                  //"--resumeFile=checkpoint/ckpt_ResNet18_91.07_to_w4_2.pth",
+    //                  "--resumeFile=checkpoint/ResNetQuantMerged18/ckpt_ResNetQuantMerged18_w4_2_91.3.pth",
+    //                  "--weights", "4", "2" 
+    //                 // "--id=4_2"
+    //                 ],
+    //         "justMyCode": true
+    //     }
+    // ]
+// }
+
+//weightsExtractor.py
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["--input=checkpoint/ResNetQuantMerged18/ckpt_ResNetQuantMerged18_w4_2_91.3.pth", 
+                     "--modelPath=models",
+                     "--modelFile=resnetQuantMerged",
+                     "--model=ResNetQuantMerged18", 
+                     "--debug",
+                     "--modelParams", "num_classes=10,output_stride=16", 
+                     "--weights", "4", "2", "--activations=8"],
+            "justMyCode": true
+        }
+    ]
+}
+
+//bnMerger.py
+// {
+//     // Use IntelliSense to learn about possible attributes.
+//     // Hover to view descriptions of existing attributes.
+//     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+//     "version": "0.2.0",
+//     "configurations": [
+
+
+//         {
+//             "name": "Python: Current File",
+//             "type": "python",
+//             "request": "launch",
+//             "program": "${file}",
+//             "console": "integratedTerminal",
+//             "args": ["--input=checkpoint/ResNetQuant18/ckpt_ResNetQuant18_w4_2_85.29.pth", 
+//                      "--output=checkpoint/bnMerged/ckpt_ResNetQuant18_w4_2_85.29.pth", 
+//                      "--modelPath=models",
+//                      "--modelFile=resnetQuant",
+//                      "--model=ResNetQuant18", 
+//                      "--layers=18",
+//                      "--modelParams", "num_classes=10,output_stride=16", 
+//                      "--weights", "4", "2", "--activations=8"],
+//             "justMyCode": true
+//         }
+//     ]
+// }

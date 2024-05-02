@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["--pth=/home/pferreira/deepL/pytorch-cifar/checkpoint/ckpt_ResNet18.pth", 
+                     "--modelPath=/home/pferreira/deepL/pytorch-cifar/models",
+                     "--modelFile=/home/pferreira/deepL/pytorch-cifar/models/resnetQuant.py",
+                     "--model=ResNetQuant18", "--modelParams", "num_classes=10,output_stride=16", 
+                     "--weights=4", "--activations=8"],
+            "justMyCode": true
+        }
+    ]
+}

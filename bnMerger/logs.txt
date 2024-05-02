@@ -1,0 +1,20 @@
+Model = ResNetQuant18 from checkpoint/ResNetQuant18/ckpt_ResNetQuant18_w4_2_85.29.pth
+number of CONV layers is 20
+number of BN layers is 20
+
+Model = ResNetQuant18 from checkpoint/ResNetQuant18/ckpt_ResNetQuant18_w4_2_85.29.pth
+number of CONV layers is 20
+number of BN layers is 20
+
+Model = ResNetQuant18 from checkpoint/ResNetQuant18/ckpt_ResNetQuant18_w4_2_77.46.pth
+number of CONV layers is 20
+number of BN layers is 20
+
+Model = ResNetQuant18 from checkpoint/ResNetQuant18/ckpt_ResNetQuant18_w4_2_85.44.pth
+number of CONV layers is 20
+number of BN layers is 20
+
+Model = ResNetQuant18 from checkpoint/ResNetQuant18/ckpt_ResNetQuant18_w4_2_93.2.pth
+number of CONV layers is 20
+number of BN layers is 20
+
