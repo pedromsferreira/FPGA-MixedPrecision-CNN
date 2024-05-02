@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/pferreira/HwSw/HLS/mixed_conv_w2a8/solution1/./sim/autowrap/testbench/mixed_conv.cpp_pre.cpp.tb.cpp
