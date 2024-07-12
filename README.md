@@ -26,7 +26,7 @@ This repository was used to produce the results present in my Master's Dissertat
 
 ## PyTorch & Brevitas
 
-All the sources used to train and export the ResNet model used for testing the HW/SW in FPGA are in branch **brevitas-resnet**.
+All the sources used to train and export the ResNet model used for testing the HW/SW system in FPGA are in branch **brevitas-resnet**.
 
 ## HLS
 
