@@ -1,10 +1,6 @@
-# Train CIFAR10 with PyTorch
-
-I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
-
-## Prerequisites
-- Python 3.6+
-- PyTorch 1.0+
+![Python 3.8](https://img.shields.io/badge/Python-3.8-yellow.svg?style=plastic)
+![PyTorch 1.9.1](https://img.shields.io/badge/PyTorch-1.9.1-red.svg?style=plastic)
+![Brevitas 0.8.0](https://img.shields.io/badge/Brevitas-0.8.0-blue.svg?style=plastic)
 
 ## Training
 ```
