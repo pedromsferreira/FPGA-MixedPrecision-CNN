@@ -11,6 +11,9 @@ run_new.sh
 run_train.sh
 ```
 
+## Quantization
+For quantization reference for your model, use the [LIMPQ](https://github.com/1hunters/LIMPQ) repository.
+
 ## Accuracy
 | Model             | Acc.        |
 | ----------------- | ----------- |
