@@ -25,35 +25,37 @@ class CustomQuant(ExtendedInjector):
 	scaling_impl_type = ScalingImplType.STATS
 	scaling_stats_op = StatsOp.MAX
 	scaling_per_output_channel = False
-	bit_width = 8
+	bit_width = None
 	narrow_range = True
 	signed = True
 
 	@value
 	def quant_type():
-		# if self.bit_width == 1:
-		# 	return QuantType.BINARY
-		# elif self.bit_width ==2:
-		# 	return QuantType.TERNARY
-		# else:
-		# 	return QuantType.INT
 		global defaultWeightBitWidth
 		if defaultWeightBitWidth == 1:
 			return QuantType.BINARY
-		# elif  defaultWeightBitWidth ==2:
-		# 	return QuantType.TERNARY
 		else:
 			return QuantType.INT
-		
+
+class CustomQuant(ExtendedInjector):
+	bit_width_impl_type = BitWidthImplType.CONST
+	restrict_scaling_type = RestrictValueType.POWER_OF_TWO
+	zero_point_impl = ZeroZeroPoint
+	float_to_int_impl_type = FloatToIntImplType.ROUND
+	scaling_impl_type = ScalingImplType.STATS
+	scaling_stats_op = StatsOp.MAX
+	scaling_per_output_channel = False
+	bit_width = None
+	narrow_range = True
+	signed = True
+	quant_type = QuantType.INT	
 
 class CustomWeightQuant(CustomQuant,WeightQuantSolver):
 	scaling_const = 1.0
 
-
 class CustomActQuant(CustomQuant, ActQuantSolver):
 	signed=False
 	float_to_int_impl_type = FloatToIntImplType.FLOOR
-
 
 class CustomSignedActQuant(CustomQuant, ActQuantSolver):
 	signed=True
@@ -79,7 +81,7 @@ import torch.nn.functional as F
 class BasicBlock(nn.Module):
 	expansion = 1
 
-	def __init__(self, in_planes, planes, weightBitWidth, stride=1):
+	def __init__(self, in_planes, planes, weightBitWidth, actsBitWidth, stride=1):
 		super(BasicBlock, self).__init__()
 		global currWeightBitWidth
 		currWeightBitWidth = weightBitWidth[0]
@@ -91,7 +93,7 @@ class BasicBlock(nn.Module):
 									 return_quant_tensor=False)
 		self.bn1 = nn.BatchNorm2d(planes)
 		self.relu1 = qnn.QuantReLU(inplace=True, 
-			    				  bit_width=defaultActivationBitWidth, 
+			    				  bit_width=actsBitWidth[0], 
 			    				  return_quant_tensor=False, 
 								  act_quant=CustomSignedActQuant)
 
@@ -119,7 +121,7 @@ class BasicBlock(nn.Module):
 
 		#self.identity = qnn.QuantIdentity(return_quant_tensor=False)
 		self.relu2 = qnn.QuantReLU(inplace=True, 
-			    				  bit_width=defaultActivationBitWidth, 
+			    				  bit_width=actsBitWidth[1], 
 			    				  return_quant_tensor=False, 
 								  act_quant=CustomSignedActQuant)
 		
@@ -135,69 +137,69 @@ class BasicBlock(nn.Module):
 		return out
 
 
-# class Bottleneck(nn.Module):
-# 	expansion = 4
+class Bottleneck(nn.Module):
+	expansion = 4
 
-# 	def __init__(self, in_planes, planes, weightBitWidth, stride=1):
-# 		super(Bottleneck, self).__init__()
-# 		self.conv1 = qnn.QuantConv2d(in_planes, planes, kernel_size=1, 
-# 			       					 bias=False, 
-# 									 weight_bit_width=weightBitWidth[0], 
-# 									 bias_quant=BiasQuant, 
-# 									 weight_quant=CustomWeightQuant(weightBitWidth[0]), 
-# 									 return_quant_tensor=True)
-# 		self.bn1 = nn.BatchNorm2d(planes)
-# 		self.relu1 = qnn.QuantReLU(inplace=True, 
-# 			    				  bit_width=defaultActivationBitWidth, 
-# 			    				  return_quant_tensor=False, 
-# 								  act_quant=CustomActQuant(defaultActivationBitWidth))
-# 		self.conv2 = qnn.QuantConv2d(planes, planes, kernel_size=3, 
-# 			       					 stride=stride, padding=1, bias=False, 
-# 									 weight_bit_width=weightBitWidth[1], 
-# 									 bias_quant=BiasQuant, 
-# 									 weight_quant=CustomWeightQuant(weightBitWidth[1]), 
-# 									 return_quant_tensor=True)
-# 		self.bn2 = nn.BatchNorm2d(planes)
-# 		self.relu2 = qnn.QuantReLU(inplace=True, 
-# 			    				  bit_width=defaultActivationBitWidth, 
-# 			    				  return_quant_tensor=False, 
-# 								  act_quant=CustomActQuant(defaultActivationBitWidth))
-# 		self.conv3 = qnn.QuantConv2d(planes, self.expansion * planes, 
-# 			       					 kernel_size=1, bias=False, 
-# 									 weight_bit_width=weightBitWidth[2], 
-# 									 bias_quant=BiasQuant, 
-# 									 weight_quant=CustomWeightQuant(weightBitWidth[2]), 
-# 									 return_quant_tensor=True)
-# 		self.bn3 = nn.BatchNorm2d(self.expansion*planes)
+	def __init__(self, in_planes, planes, weightBitWidth, actsBitWidth, stride=1):
+		super(Bottleneck, self).__init__()
+		self.conv1 = qnn.QuantConv2d(in_planes, planes, kernel_size=1, 
+			       					 bias=False, 
+									 weight_bit_width=weightBitWidth[0], 
+									 bias_quant=BiasQuant, 
+									 weight_quant=CustomWeightQuant, 
+									 return_quant_tensor=True)
+		self.bn1 = nn.BatchNorm2d(planes)
+		self.relu1 = qnn.QuantReLU(inplace=True, 
+			    				  bit_width=actsBitWidth[0], 
+			    				  return_quant_tensor=False, 
+								  act_quant=CustomSignedActQuant)
+		self.conv2 = qnn.QuantConv2d(planes, planes, kernel_size=3, 
+			       					 stride=stride, padding=1, bias=False, 
+									 weight_bit_width=weightBitWidth[1], 
+									 bias_quant=BiasQuant, 
+									 weight_quant=CustomWeightQuant, 
+									 return_quant_tensor=True)
+		self.bn2 = nn.BatchNorm2d(planes)
+		self.relu2 = qnn.QuantReLU(inplace=True, 
+			    				  bit_width=actsBitWidth[1], 
+			    				  return_quant_tensor=False, 
+								  act_quant=CustomSignedActQuant)
+		self.conv3 = qnn.QuantConv2d(planes, self.expansion * planes, 
+			       					 kernel_size=1, bias=False, 
+									 weight_bit_width=weightBitWidth[2], 
+									 bias_quant=BiasQuant, 
+									 weight_quant=CustomWeightQuant, 
+									 return_quant_tensor=True)
+		self.bn3 = nn.BatchNorm2d(self.expansion*planes)
 		
 
-# 		self.shortcut = nn.Sequential()
-# 		if stride != 1 or in_planes != self.expansion*planes:
-# 			self.shortcut = nn.Sequential(
-# 				qnn.QuantConv2d(in_planes, self.expansion*planes, 
-# 		    					kernel_size=1, stride=stride, bias=False, 
-# 								weight_bit_width=weightBitWidth[0], 
-# 								bias_quant=BiasQuant, 
-# 								weight_quant=CustomWeightQuant, 
-# 								return_quant_tensor=True),
-# 				nn.BatchNorm2d(self.expansion*planes)
-# 			)
-# 		self.relu3 = qnn.QuantReLU(inplace=True, 
-# 			    				  bit_width=defaultActivationBitWidth, 
-# 			    				  return_quant_tensor=False, 
-# 								  act_quant=CustomActQuant(defaultActivationBitWidth))
+		self.shortcut = nn.Sequential()
+		if stride != 1 or in_planes != self.expansion*planes:
+			self.shortcut = nn.Sequential(
+				qnn.QuantConv2d(in_planes, self.expansion*planes, 
+		    					kernel_size=1, stride=stride, bias=False, 
+								weight_bit_width=weightBitWidth[0], 
+								bias_quant=BiasQuant, 
+								weight_quant=CustomWeightQuant, 
+								return_quant_tensor=True),
+				nn.BatchNorm2d(self.expansion*planes)
+			)
+		self.relu3 = qnn.QuantReLU(inplace=True, 
+			    				  bit_width=actsBitWidth[2], 
+			    				  return_quant_tensor=False, 
+								  act_quant=CustomSignedActQuant)
 
-# 	def forward(self, x):
-# 		out = self.relu1(self.bn1(self.conv1(x)))
-# 		out = self.relu2(self.bn2(self.conv2(out)))
-# 		out = self.bn3(self.conv3(out)) #desquantizar o bn3 aqui OU somar um quantTensor.add
-# 		out += self.shortcut(x)
-# 		out = self.relu3(out)
-# 		return out
+	def forward(self, x):
+		out = self.relu1(self.bn1(self.conv1(x)))
+		out = self.relu2(self.bn2(self.conv2(out)))
+		out = self.bn3(self.conv3(out)) #desquantizar o bn3 aqui OU somar um quantTensor.add
+		out += self.shortcut(x)
+		out = self.relu3(out)
+		return out
 
 
 class ResNetQuant(nn.Module):
-	def __init__(self, block, num_blocks, weightBitWidth, num_classes=10):
+	def __init__(self, block, num_blocks, weightBitWidth, actsBitWidth, num_classes=10):
 		super(ResNetQuant, self).__init__()
 		global defaultWeightBitWidth
 		global defaultActivationBitWidth
@@ -225,25 +227,29 @@ class ResNetQuant(nn.Module):
 									 return_quant_tensor=True)
 		self.bn1 = nn.BatchNorm2d(64)
 		self.relu1 = qnn.QuantReLU(inplace=True, 
-			    				  bit_width=defaultActivationBitWidth, 
+			    				  bit_width=actsBitWidth[0], 
 			    				  return_quant_tensor=False, 
 								  act_quant=CustomSignedActQuant)
 
 		currIdx = 1
 		self.layer1 = self._make_layer(block, 64, num_blocks[0], stride=1, 
 				 					   wgtBitWidth=weightBitWidth, 
+									   actBitWidth=actsBitWidth,
 									   layerStartIdx=currIdx)
 		currIdx += num_blocks[0]*convsPerLayer
 		self.layer2 = self._make_layer(block, 128, num_blocks[1], stride=2, 
-				 					   wgtBitWidth=weightBitWidth, 
+				 					   wgtBitWidth=weightBitWidth,
+									   actBitWidth=actsBitWidth,
 									   layerStartIdx=currIdx)
 		currIdx += num_blocks[1]*convsPerLayer
 		self.layer3 = self._make_layer(block, 256, num_blocks[2], stride=2, 
 				 					   wgtBitWidth=weightBitWidth, 
+									   actBitWidth=actsBitWidth,
 									   layerStartIdx=currIdx)
 		currIdx += num_blocks[2]*convsPerLayer
 		self.layer4 = self._make_layer(block, 512, num_blocks[3], stride=2, 
 				 					   wgtBitWidth=weightBitWidth, 
+									   actBitWidth=actsBitWidth,
 									   layerStartIdx=currIdx)
 		self.linear = qnn.QuantLinear(512*block.expansion, num_classes, 
 									  bias=False, weight_bit_width=8, 
@@ -251,7 +257,7 @@ class ResNetQuant(nn.Module):
 									  weight_quant=CustomWeightQuant, 
 									  return_quant_tensor=False)
 	
-	def _make_layer(self, block, planes, num_blocks, stride, wgtBitWidth, layerStartIdx):
+	def _make_layer(self, block, planes, num_blocks, stride, wgtBitWidth, actBitWidth, layerStartIdx):
 		strides = [stride] + [1]*(num_blocks-1)
 		layers = []
 		layerOffset = 0
@@ -260,6 +266,8 @@ class ResNetQuant(nn.Module):
 			layers.append(block(in_planes=self.in_planes, planes=planes, 
 		       					weightBitWidth=wgtBitWidth[layerStartIdx+layerOffset:
 					 			layerStartIdx+layerOffset+convsPerLayer], 
+								actsBitWidth=actBitWidth[layerStartIdx+layerOffset:
+								layerStartIdx+layerOffset+convsPerLayer],
 								stride=stride))
 			self.in_planes = planes * block.expansion
 			layerOffset += convsPerLayer
@@ -294,34 +302,37 @@ def setWeightBitWidth(num_layers, bit_width_list):
 
 	return weightBitWidth
 
-def ResNetQuant18(weights_list):
+def ResNetQuant18(weights_list, acts_list):
 	return ResNetQuant(block=BasicBlock, num_blocks=[2, 2, 2, 2], 
-		    		   weightBitWidth=setWeightBitWidth(18, weights_list))
+		    		   weightBitWidth=setWeightBitWidth(18, weights_list),
+					   actsBitWidth=setWeightBitWidth(18, acts_list))
 
 
-def ResNetQuant34(weights_list):
+def ResNetQuant34(weights_list, acts_list):
 	return ResNetQuant(block=BasicBlock, num_blocks=[3, 4, 6, 3], 
-		    		   weightBitWidth=setWeightBitWidth(34, weights_list))
+		    		   weightBitWidth=setWeightBitWidth(34, weights_list),
+					   actsBitWidth=setWeightBitWidth(34, acts_list))
 
 
-# def ResNetQuant50(weights_list):
-# 	return ResNetQuant(block=Bottleneck, num_blocks=[3, 4, 6, 3], 
-# 		    		   weightBitWidth=setWeightBitWidth(50, weights_list))
+def ResNetQuant50(weights_list, acts_list):
+	return ResNetQuant(block=Bottleneck, num_blocks=[3, 4, 6, 3], 
+		    		   weightBitWidth=setWeightBitWidth(50, weights_list),
+					   actsBitWidth=setWeightBitWidth(50, acts_list))
 
 
-# def ResNetQuant101(weights_list):
+# def ResNetQuant101(weights_list, acts_list):
 # 	return ResNetQuant(block=Bottleneck, num_blocks=[3, 4, 23, 3], 
 # 		    		   weightBitWidth=setWeightBitWidth(101, weights_list))
 
 
-# def ResNetQuant152(weights_list):
+# def ResNetQuant152(weights_list, acts_list):
 # 	return ResNetQuant(block=Bottleneck, num_blocks=[3, 8, 36, 3], 
 # 		    		   weightBitWidth=setWeightBitWidth(152, weights_list))
 
 
-def test(weights_list):
-	net = ResNetQuant18(weights_list)
-	y = net(torch.randn(1, 3, 32, 32))
-	print(y.size())
+# def test(weights_list):
+# 	net = ResNetQuant18(weights_list)
+# 	y = net(torch.randn(1, 3, 32, 32))
+# 	print(y.size())
 
 # test()

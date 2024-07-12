@@ -9,6 +9,7 @@ import math
 import numpy as np
 import brevitas.nn as qnn
 from brevitas.quant import Int8Bias as BiasQuant
+import time
 
 #Engine declaration
 from brevitas.inject import ExtendedInjector
@@ -285,7 +286,7 @@ class ResNetQuantMerged(nn.Module):
 		# print(out)
 		out = out.view(out.size(0), -1)
 		out = self.linear(out)
-		print(out)
+		#print(out)
 		return out
 
 def setWeightBitWidth(num_layers, bit_width_list):

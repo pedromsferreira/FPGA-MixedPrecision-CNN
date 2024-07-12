@@ -12,6 +12,7 @@ import importlib
 import sys
 import os
 import argparse
+import time
 
 from models import *
 from utils import progress_bar
@@ -28,6 +29,7 @@ parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--lr', default=0.04, type=float, help='learning rate')
 parser.add_argument('--resume', '-r', action='store_true', help='resume from checkpoint')
 parser.add_argument('--weights', nargs='+', default='8', type=int, help='weights sequence e.g 8 4')
+parser.add_argument('--acts', nargs='+', default='8', type=int, help='acts sequence e.g 8 4')
 
 parser.add_argument('--id', default="", type=str, help='name appended to save file')
 parser.add_argument('--modelPath', default="models", type=str, help='Input Model path')
@@ -43,7 +45,8 @@ if args.resume == True and args.resumeFile == "none":
     print('Invalid resume operation')
     exit(1)
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 best_acc = 0  # best test accuracy
 start_epoch = 0  # start from epoch 0 or last checkpoint epoch
 
@@ -71,7 +74,7 @@ trainloader = torch.utils.data.DataLoader(
 testset = torchvision.datasets.CIFAR10(
     root='/opt/datasets/CIFAR10', train=False, download=False, transform=transform_test)
 testloader = torch.utils.data.DataLoader(
-    testset, batch_size=50, shuffle=False, num_workers=2) #og bs = 100
+    testset, batch_size=1, shuffle=False, num_workers=2) #og bs = 100
 
 classes = ('plane', 'car', 'bird', 'cat', 'deer',
            'dog', 'frog', 'horse', 'ship', 'truck')
@@ -124,6 +127,7 @@ else:
 net_name = str(net.__name__)
 
 if "Quant" in net_name:
+    # net = net(args.weights, args.acts)
     net = net(args.weights)
 else:
     net = net()
@@ -134,36 +138,51 @@ if device == 'cuda':
         net = torch.nn.DataParallel(net)
         cudnn.benchmark = True
 
-if args.resume:
-    # Load checkpoint.
-    print('==> Resuming from checkpoint..')
-    assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
+# if args.resume:
+#     # Load checkpoint.
+#     print('==> Resuming from checkpoint..')
+#     assert os.path.isdir('checkpoint'), 'Error: no checkpoint directory found!'
     
-    #checkpoint = torch.load('./' + args.resumeFile, strict = args.strict)
-    #net.load_state_dict(checkpoint['net'])
+#     #checkpoint = torch.load('./' + args.resumeFile, strict = args.strict)
+#     #net.load_state_dict(checkpoint['net'])
     
-    checkpoint = torch.load('./' + args.resumeFile)
-    if args.unstrict is True: 
-        net.load_state_dict(checkpoint['net'], strict = False)
-    else:
-        net.load_state_dict(checkpoint['net'])
+#     checkpoint = torch.load('./' + args.resumeFile)
+#     if args.unstrict is True: 
+#         net.load_state_dict(checkpoint['net'], strict = False)
+#     else:
+#         net.load_state_dict(checkpoint['net'])
 
-    net = net.to(device)
-    best_acc = checkpoint['acc']
-    start_epoch = checkpoint['epoch']
+#     net = net.to(device)
+#     best_acc = checkpoint['acc']
+#     start_epoch = checkpoint['epoch']
 
 if runInference:
-    image = Image.open('test_img_17_horse.png')
-    image = transform_test(image)
-    image = image.unsqueeze(0)
-    image = image.to(device)
+    # image = Image.open('test_img_17_horse.png')
+    # image = transform_test(image)
+    # image = image.unsqueeze(0)
+    # image = image.to(device)
+    net.eval()
 
+    count = 0
+    start_time = time.time()
     with torch.no_grad():
-        net.eval()
-        out = net(image)
+        # out = net(image)
+        for i in range(1):  
+            for batch_idx, (inputs, targets) in enumerate(testloader):
+                inputs = inputs.to(device)
+                outputs = net(inputs)
+                count += 1
+                # print(count)
+    end_time = time.time()
+    
+    
+           
 
-    _, predicted = torch.max(out, 1)
-    print('Predicted: ', classes[predicted.item()])
+    # _, predicted = torch.max(out, 1)
+
+    # print('Predicted: ', classes[predicted.item()])
+    print(f'Time: ', end_time - start_time)
+    print('Count: ' + str(count))
     exit(0)
 
 
@@ -179,6 +198,9 @@ elif args.optimizer == "Adam":
 scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
 
 best_acc_quant = 0
+
+progressReport = open("timeline-report/"+ str(net_name) + "-" + str(args.id) +".txt", "a")
+progressReport.write("lr="+ str(args.lr) + "\n")
 
 # Training
 def train(epoch):
@@ -227,6 +249,7 @@ def test(epoch):
 
     # Save checkpoint.
     acc = 100.*correct/total
+    progressReport.write(str(acc) + "\n")
     if acc > best_acc:
         print('Saving..')
         state = {
@@ -269,7 +292,7 @@ def test(epoch):
               '=' + str(round(best_acc - best_acc_quant, 2)))
 
 
-for epoch in range(start_epoch, start_epoch+100):
+for epoch in range(start_epoch, start_epoch+50):
     train(epoch)
     test(epoch)
     before_lr = optimizer.param_groups[0]["lr"]
@@ -277,8 +300,11 @@ for epoch in range(start_epoch, start_epoch+100):
     after_lr = optimizer.param_groups[0]["lr"]
     print("Epoch %d: lr %.5f -> %.5f" % (epoch, before_lr, after_lr))
 
-results = open("results.txt", "a")
-results.write(net_name + " with lr="+ str(args.lr) +":\n")
+results = open("results-proper.txt", "a")
+results.write(net_name +":\n")
+results.write("lr="+ str(args.lr) + "\n")
+results.write("bitwidth="+ str(args.weights) + "\n")
 results.write("best acc = " + str(best_acc) + "%\n")
 results.write("stopped at epoch = " + str(start_epoch+100) + "\n\n")
 results.close()
+progressReport.close()
