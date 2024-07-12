@@ -8,7 +8,7 @@
 
 **Figure:** *Block diagram of the hardware architecture of the ResNet18 HW/SW implementation*
 
-This repository was used to produce the results present in my Master's Dissertation at IST:
+This repository was used to produce the results present in my Master's thesis at IST:
 
 > **FPGA Design of Mixed-Precision Convolutional Neural Networks** <br>
 > Pedro Ferreira <br>
